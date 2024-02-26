@@ -40,6 +40,11 @@ Rémy SCHERIER (DrAtsiSama)
 
 Description et réflexion:
 
+- La fonctionnalité de la salle de quiz offre une plateforme interactive pour les participants, facilitant l'engagement et la collaboration. 
+- Le minuteur côté serveur assure une gestion précise du temps pour chaque question, garantissant l'équité entre les participants.
+- Le réglage du temps par question en temps réel permet une adaptation dynamique selon la complexité, optimisant ainsi l'expérience utilisateur. 
+- L'intégration d'un chat en direct lors des quiz enrichirait l'interaction sociale entre les participants malheureusement on nous retrouvera pas un code abouti lors de la livraison de ce projet.
+
 Elodie JOLO (elodiejl)
 - [x] Déroulement des questions et réponses
 - [x] Retour en direct sur les réponses

@@ -221,4 +221,3 @@ async function createDefaultQuiz() {
         throw error;
     }
 }
-

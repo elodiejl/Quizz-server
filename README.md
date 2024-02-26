@@ -30,6 +30,8 @@ Pour la mise en place de la communication en temps réel avec Socket.IO, deux as
 
 - Diffusion des questions et réception des réponses en temps réel : Cette fonctionnalité implique la capacité du serveur à diffuser les questions aux clients et à recevoir leurs réponses en temps réel. J'ai également géré cette partie dans le même fichier socketServer.js, en mettant en place les mécanismes nécessaires pour la diffusion des questions et la réception des réponses.
 
+- La notation et résultats nous a causé quelques problèmes
+
 
 
 Rémy SCHERIER (DrAtsiSama)

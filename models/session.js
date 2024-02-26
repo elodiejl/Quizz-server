@@ -2,78 +2,73 @@ const mongoose = require("mongoose");
 const PlayerResult = require("./playerResult");
 const LeaderBoard = require("./leaderBoard");
 
-// Schéma de la session
 const sessionSchema = new mongoose.Schema({
     hostId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User", // Référence vers le modèle User
+        ref: "User",
     },
     quizId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Quiz", // Référence vers le modèle Quiz
+        ref: "Quiz",
     },
     sessionId: {
-        type: String, // Identifiant de session
+        type: String,
     },
     pin: {
-        type: String, // Code PIN de la session
+        type: String,
     },
     isLive: {
-        type: Boolean, // Indique si la session est en cours
-        default: false, // Par défaut, la session n'est pas en cours
+        type: Boolean,
+        default: false,
     },
     playerList: {
-        type: [String], // Liste des ID des joueurs dans la session
-        default: [], // Par défaut, la liste est vide
+        type: [String],
+        default: [],
     },
     questionIdList: {
-        type: [Number], // Liste des indices de questions dans la session
-        default: [], // Par défaut, la liste est vide
+        type: [Number], 
+        default: [], 
     },
     date: {
-        type: Date, // Date de création de la session
+        type: Date,
         required: true,
-        default: Date.now, // Par défaut, la date actuelle
+        default: Date.now,
     },
     nbOfParticipants: {
-        type: Number, // Nombre de participants à la session
-        default: 0, // Par défaut, aucun participant
+        type: Number,
+        default: 0,
     },
     playerResultList: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "PlayerResult", // Référence vers le modèle PlayerResult
+            ref: "PlayerResult",
         },
     ],
 });
 
-// Fonction exécutée avant l'enregistrement d'une nouvelle session
-sessionSchema.pre('save', async function(next) {
-    if (this.isNew) {
-        try {
-            // Crée les résultats des joueurs pour cette session
-            const playerResults = await PlayerResult.insertMany(
-                this.playerList.map(playerId => ({
-                    playerId,
-                    gameId: this._id,
-                }))
-            );
-            // Crée le tableau de bord des leaders pour cette session
-            const leaderBoard = new LeaderBoard({
-                gameId: this._id,
-                playerResultList: playerResults.map(result => result._id),
-                questionLeaderboard: [],
-                currentLeaderboard: [],
-            });
-            // Enregistre le tableau de bord des leaders
-            await leaderBoard.save();
-            // Associe les résultats des joueurs à la session
-            this.playerResultList = playerResults.map(result => result._id);
-        } catch (error) {
-            return next(error);
-        }
-    }
-    next();
-});
+// sessionSchema.pre('save', async function(next) {
+//     if (this.isNew) {
+//         try {
+//             const playerResults = await PlayerResult.insertMany(
+//                 this.playerList.map(playerId => ({
+//                     playerId,
+//                     gameId: this._id,
+//                 }))
+//             );
+//             const leaderBoard = new LeaderBoard({
+//                 gameId: this._id,
+//                 playerResultList: playerResults.map(result => result._id),
+//                 questionLeaderboard: [],
+//                 currentLeaderboard: [],
+//             });
+//             await leaderBoard.save();
+//             this.playerResultList = playerResults.map(result => result._id);
+//         } catch (error) {
+//             return next(error);
+//         }
+//     }
+//     next();
+// });
+
 
 module.exports = mongoose.model("Session", sessionSchema);

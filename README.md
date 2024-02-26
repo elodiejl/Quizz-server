@@ -24,12 +24,11 @@ Viet Anh BUI (vietanh2810)
 - [x] Notation et résultats
 - [x] Synchronisation des états de jeu
 
-Description et réflexion:
-Pour la partie Communication en temps réel avec Socket.IO, il y avait 2 parties à gérer:
-- Établissement de connexions WebSocket entre le serveur et les clients pour une communication bidirectionnelle.
-- Diffusion des questions et réception des réponses en temps réel.
-Pour la première partie, j'ai créé un fichier socketServer.js qui initialise une connexion Websocket.
-Pour la deuxième partie, toujours dans le même fichier.
+## Description et réflexion:
+Pour la mise en place de la communication en temps réel avec Socket.IO, deux aspects étaient à prendre en compte :
+- Établissement de connexions WebSocket : Il était nécessaire de permettre la communication bidirectionnelle entre le serveur et les clients. À cette fin, j'ai créé un fichier socketServer.js dédié à l'initialisation des connexions WebSocket.
+
+- Diffusion des questions et réception des réponses en temps réel : Cette fonctionnalité implique la capacité du serveur à diffuser les questions aux clients et à recevoir leurs réponses en temps réel. J'ai également géré cette partie dans le même fichier socketServer.js, en mettant en place les mécanismes nécessaires pour la diffusion des questions et la réception des réponses.
 
 
 

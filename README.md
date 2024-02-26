@@ -47,7 +47,7 @@ Description et réflexion:
 
 Elodie JOLO (elodiejl)
 - [x] Déroulement des questions et réponses
-- [ ] Retour en direct sur les réponses
+- [x] Retour en direct sur les réponses
 - [x] Notifications en temps réel
 
 Description et réflexion:

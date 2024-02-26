@@ -51,3 +51,6 @@ Elodie JOLO (elodiejl)
 - [x] Notifications en temps réel
 
 Description et réflexion:
+- La mise en œuvre du déroulement des questions et réponses assure un flux fluide pendant les sessions de quiz. 
+- Le retour en direct sur les réponses fournit aux participants un feedback immédiat, favorisant ainsi l'apprentissage interactif. 
+- Les notifications en temps réel permettent de communiquer instantanément des informations importantes aux participants, améliorant ainsi la réactivité et l'efficacité de la plateforme de quiz.

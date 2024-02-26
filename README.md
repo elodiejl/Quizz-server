@@ -12,8 +12,8 @@ npm install
 ```
 # Petite note
 
-il n'y a pas de front, notre projet est à tester avec postman.
-localhost:8080
+
+Veuillez noter qu'il n'y a pas d'interface utilisateur pour notre projet. Pour tester les fonctionnalités, veuillez utiliser Postman en accédant à l'adresse `localhost:8080`.
 
 
 # Contribution de l'équipe
